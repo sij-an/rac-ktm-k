@@ -1,0 +1,944 @@
+/* ==========================================================================
+   RAC KTM KALANKI - Core Design System & Stylesheet
+   Built with Vanilla CSS3, Grid, Flexbox, and Modern CSS Custom Properties
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Official Rotary Color Palette */
+  --rotary-royal-blue: #17458f;
+  --rotary-royal-blue-hover: #123773;
+  --rotary-gold: #f7a81b;
+  --rotary-gold-hover: #d99011;
+  --rotary-azure: #0067c8;
+  --rotary-azure-hover: #0053a4;
+
+  --bg-canvas: #f0f4f9;
+  --bg-canvas-alt: #ffffff;
+  --bg-card: #ffffff;
+  --bg-dark: #0e2447;
+
+  --text-primary: #172b4d;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --text-light: #ffffff;
+
+  --primary-plum: var(--rotary-royal-blue);
+  --primary-plum-hover: var(--rotary-royal-blue-hover);
+  --primary-light: #ebf3fa;
+
+  --secondary-navy: var(--rotary-gold);
+  --secondary-navy-hover: var(--rotary-gold-hover);
+
+  --border-subtle: #d2dbe7;
+  --border-accent: #b3cced;
+
+  /* Rotary Typography (Open Sans for Headings/Nav, Georgia for Body/Quotes) */
+  --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Georgia', serif;
+
+  /* Spacing Tokens */
+  --spacing-xs: 0.5rem;
+  /* 8px */
+  --spacing-sm: 1rem;
+  /* 16px */
+  --spacing-md: 1.5rem;
+  /* 24px */
+  --spacing-lg: 2.5rem;
+  /* 40px */
+  --spacing-xl: 4rem;
+  /* 64px */
+  --spacing-xxl: 6rem;
+  /* 96px */
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(23, 69, 143, 0.06);
+  --shadow-md: 0 8px 24px rgba(23, 69, 143, 0.1);
+  --shadow-lg: 0 16px 40px rgba(23, 69, 143, 0.14);
+
+  /* Animation Timings */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Baseline Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Common Layout & Utility Classes
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.max-w-2xl {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Kicker Badge */
+.badge-kicker,
+.section-kicker {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background-color: var(--primary-light);
+  color: var(--primary-plum);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Headings */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--primary-plum);
+  color: var(--text-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-plum-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-navy);
+  color: #172b4d;
+  font-weight: 700;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-navy-hover);
+  color: #172b4d;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-plum);
+  color: var(--primary-plum);
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-plum);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: var(--text-light);
+  background-color: transparent;
+}
+
+.btn-outline-white:hover {
+  background-color: var(--text-light);
+  color: var(--primary-plum);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--primary-plum);
+  margin-top: var(--spacing-sm);
+}
+
+.link-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Navigation
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(240, 244, 249, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(23, 69, 143, 0.08);
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-plum);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover {
+  color: var(--primary-plum);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+/* Hamburger Active Animation */
+.nav-toggle.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.nav-toggle.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xxl);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-media {
+  position: relative;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-card);
+}
+
+.hero-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.hero-image-wrapper:hover .hero-image {
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   6. About Section
+   -------------------------------------------------------------------------- */
+.about-section {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  background-color: var(--bg-canvas-alt);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+/* --------------------------------------------------------------------------
+   6.5 Our People Section (Board of Directors & Club Members)
+   -------------------------------------------------------------------------- */
+.our-people-section {
+  padding-bottom: var(--spacing-xxl);
+  background-color: var(--bg-canvas);
+}
+
+/* Subsection Title (Board of Directors / Club Members) */
+.people-subsection {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.people-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.subsection-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.subsection-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rotary-gold), var(--rotary-royal-blue));
+  border-radius: var(--radius-pill);
+}
+
+/* ---- Board of Directors Grid ---- */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ---- Club Members Grid ---- */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+/* ---- Shared People Card ---- */
+.people-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.25rem 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(23, 69, 143, 0.06);
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal),
+              border-color var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.people-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-accent);
+}
+
+/* ---- Circular Profile Image ---- */
+.people-image-wrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Gold ring border for board members (larger) */
+.board-image-wrapper {
+  width: 130px;
+  height: 130px;
+  border: 3px solid var(--rotary-gold);
+  box-shadow: 0 4px 16px rgba(247, 168, 27, 0.18);
+}
+
+/* Slightly smaller ring for regular members */
+.member-image-wrapper {
+  width: 100px;
+  height: 100px;
+  border: 3px solid var(--border-accent);
+  box-shadow: 0 2px 10px rgba(23, 69, 143, 0.08);
+}
+
+.people-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  /* Fallback for missing images: Rotary blue background with user silhouette */
+  background-color: var(--primary-light);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317458f' opacity='0.25'%3E%3Cpath d='M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center 60%;
+  background-size: 50%;
+}
+
+.people-card:hover .people-image {
+  transform: scale(1.08);
+}
+
+/* ---- Names & Club Text ---- */
+.people-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.people-club {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Board cards are slightly larger / more prominent */
+.board-card {
+  padding: 2.25rem 1.5rem 2rem;
+}
+
+.board-card .people-name {
+  font-size: 1.1rem;
+}
+
+/* Member cards are more compact */
+.member-card {
+  padding: 1.5rem 1rem 1.25rem;
+}
+
+.member-card .people-name {
+  font-size: 0.95rem;
+}
+
+.member-card .people-club {
+  font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Partners Section (Logo Wall)
+   -------------------------------------------------------------------------- */
+.partners-section {
+  padding-bottom: var(--spacing-xxl);
+}
+
+.partners-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.partners-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.logo-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 2.5rem var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-normal);
+}
+
+.logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-accent);
+}
+
+.partner-logo {
+  max-height: 50px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: all var(--transition-normal);
+}
+
+.logo-card:hover .partner-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   8. Testimonials Section
+   -------------------------------------------------------------------------- */
+.testimonials-section {
+  padding-bottom: var(--spacing-xxl);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all var(--transition-normal);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.quote-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+}
+
+.author-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.author-role {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   9. Get Involved CTA Section
+   -------------------------------------------------------------------------- */
+.cta-section {
+  padding-bottom: var(--spacing-xxl);
+}
+
+.cta-card {
+  background-color: var(--primary-plum);
+  color: var(--text-light);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.cta-card .btn-primary {
+  background-color: var(--text-light);
+  color: var(--primary-plum);
+}
+
+.cta-card .btn-primary:hover {
+  background-color: #ffffff;
+  color: var(--primary-plum-hover);
+}
+
+/* --------------------------------------------------------------------------
+   10. FAQ Accordion Section
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding-bottom: var(--spacing-xxl);
+}
+
+.faq-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.faq-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: var(--spacing-md);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-item {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.accordion-item.active {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+.accordion-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.accordion-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-plum);
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.accordion-body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer Section
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #005DAA;
+  color: var(--text-light);
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-top: 4px solid var(--rotary-gold);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+}
+
+.footer-location {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+.footer-nav-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--rotary-gold);
+  transform: translateY(-1px);
+}
+
+.footer-bottom {
+  padding-top: var(--spacing-md);
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* --------------------------------------------------------------------------
+   12. Animations & Scroll Reveal
+   -------------------------------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

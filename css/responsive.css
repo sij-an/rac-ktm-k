@@ -1,0 +1,238 @@
+/* ==========================================================================
+   RAC KTM KALANKI - Responsive Stylesheet
+   Adapts layout, navigation, grid systems, and typography for Desktop, Tablet, and Mobile.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Large Tablet & Laptop (Max-Width: 1024px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  :root {
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4.5rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-media {
+    order: 2;
+  }
+
+  .hero-image {
+    height: 380px;
+  }
+
+  .partners-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .faq-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Our People: Board 5→3 cols, Members 4→3 cols */
+  .board-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .board-image-wrapper {
+    width: 110px;
+    height: 110px;
+  }
+
+  .cta-card {
+    padding: 3rem 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Tablet & Mobile Navigation Overlay (Max-Width: 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-btn {
+    display: none; /* Hidden on smaller headers, accessible inside menu or hero */
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .logo-card {
+    padding: 2rem 1rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-nav-list {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  /* Our People: Board 3→2 cols, Members 3→2 cols */
+  .board-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .board-image-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .member-image-wrapper {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Small Mobile Devices (Max-Width: 480px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .partners-logos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-title {
+    font-size: 1.75rem;
+  }
+
+  .cta-description {
+    font-size: 1.05rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .faq-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .accordion-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .accordion-title {
+    font-size: 1rem;
+  }
+
+  .accordion-body {
+    padding: 0 1rem 1.25rem 1rem;
+  }
+
+  /* Our People: Stack to single column */
+  .board-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .board-image-wrapper {
+    width: 110px;
+    height: 110px;
+  }
+
+  .member-image-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .people-card {
+    padding: 1.5rem 1rem;
+  }
+}
