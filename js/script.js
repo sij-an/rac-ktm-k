@@ -37,16 +37,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     2. Navbar Scroll Styling
+     2. Navbar Scroll Styling & Active Link ScrollSpy
      -------------------------------------------------------------------------- */
   const navbar = document.getElementById('navbar');
+  const sections = document.querySelectorAll('section[id]');
   
   const handleScroll = () => {
-    if (window.scrollY > 20) {
+    if (window.scrollY > 10) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
+
+    // ScrollSpy active link highlighting
+    let currentSectionId = '';
+    const scrollPosition = window.scrollY + 120;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (currentSectionId && link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
+    });
   };
 
   window.addEventListener('scroll', handleScroll);
