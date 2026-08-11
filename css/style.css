@@ -1398,7 +1398,7 @@ button {
   display: flex;
   flex-direction: column;
   outline: none;
-  cursor: pointer;
+  cursor: default;
   min-height: 380px;
 }
 
