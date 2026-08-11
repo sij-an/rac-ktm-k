@@ -1403,8 +1403,7 @@ button {
 }
 
 .project-card:hover,
-.project-card:focus-visible,
-.project-card.is-expanded {
+.project-card:focus-visible {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: var(--border-accent);
@@ -1520,8 +1519,7 @@ button {
   transition: transform var(--transition-fast);
 }
 
-.project-card:hover .trigger-icon,
-.project-card.is-expanded .trigger-icon {
+.project-card:hover .trigger-icon {
   transform: translateX(4px);
 }
 
@@ -1548,8 +1546,7 @@ button {
 }
 
 .project-card:hover .project-overlay,
-.project-card:focus-within .project-overlay,
-.project-card.is-expanded .project-overlay {
+.project-card:focus-within .project-overlay {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);

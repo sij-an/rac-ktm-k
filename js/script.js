@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const objectivesHTML = project.objectives.map(obj => `<li>${obj}</li>`).join('');
 
     return `
-      <div class="project-card fade-in visible" data-category="${project.categorySlug}" data-year="${project.rotaYear}" tabindex="0" aria-expanded="false">
+      <div class="project-card fade-in visible" data-category="${project.categorySlug}" data-year="${project.rotaYear}" tabindex="0">
         <div class="card-default-view">
           <div class="project-card-header">
             <span class="category-badge">${project.category}</span>
@@ -228,32 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
-  // Attach card event listeners (mobile tap expansion & keyboard enter/space)
-  const attachCardEventListeners = () => {
-    if (!projectsGrid) return;
-    const cards = projectsGrid.querySelectorAll('.project-card');
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const isExpanded = card.classList.contains('is-expanded');
-        cards.forEach(c => {
-          if (c !== card) {
-            c.classList.remove('is-expanded');
-            c.setAttribute('aria-expanded', 'false');
-          }
-        });
-        card.classList.toggle('is-expanded', !isExpanded);
-        card.setAttribute('aria-expanded', (!isExpanded).toString());
-      });
-
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
-    });
-  };
-
   // Main Render Function
   const renderProjects = () => {
     if (!projectsGrid || typeof HOSTED_PROJECTS === 'undefined') return;
@@ -280,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       if (filtered.length > 0) {
         projectsGrid.innerHTML = filtered.map(createProjectCardHTML).join('');
-        attachCardEventListeners();
       } else {
         projectsGrid.innerHTML = createEmptyStateHTML(yearLabel);
       }
