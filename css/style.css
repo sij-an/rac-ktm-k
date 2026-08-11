@@ -536,6 +536,7 @@ button {
   padding-bottom: var(--spacing-xxl);
   background-color: var(--bg-canvas-alt);
   border-radius: var(--radius-xl);
+  margin-top: var(--spacing-xxl);
   margin-bottom: var(--spacing-xxl);
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(226, 232, 240, 0.7);
@@ -547,10 +548,20 @@ button {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--rotary-royal-blue) 0%, var(--rotary-gold) 50%, var(--rotary-azure) 100%);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--rotary-royal-blue) 20%,
+    var(--rotary-gold) 50%,
+    var(--rotary-azure) 80%,
+    transparent 100%
+  );
+  border-radius: 0 0 4px 4px;
+  opacity: 0.85;
 }
 
 .about-grid {
@@ -1678,17 +1689,22 @@ button {
   padding-bottom: var(--spacing-xxl);
 }
 
-.faq-grid-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: var(--spacing-xl);
-  align-items: start;
+.faq-header {
+  max-width: 760px;
+  margin: 0 auto 3rem auto;
 }
 
 .faq-actions {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  margin-top: var(--spacing-md);
+  margin-top: 1.5rem;
+}
+
+.faq-accordion-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .accordion {
