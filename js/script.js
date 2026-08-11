@@ -128,4 +128,193 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeElements = document.querySelectorAll('.fade-in');
   fadeElements.forEach(el => revealObserver.observe(el));
 
+  /* --------------------------------------------------------------------------
+     5. Hosted Projects Showcase - Year & Category Filtering + Date Sorting
+     -------------------------------------------------------------------------- */
+  const rotaYearSelect = document.getElementById('rotaYearSelect');
+  const currentYearBadge = document.getElementById('currentYearBadge');
+  const currentYearText = document.getElementById('currentYearText');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectsGrid = document.getElementById('projectsGrid');
+
+  // Determine latest year with available project data by default
+  const getLatestYearWithData = () => {
+    if (typeof HOSTED_PROJECTS !== 'undefined' && HOSTED_PROJECTS.length > 0) {
+      const yearsWithData = [...new Set(HOSTED_PROJECTS.map(p => p.rotaYear))];
+      if (yearsWithData.length > 0) {
+        return yearsWithData.sort().pop();
+      }
+    }
+    return '25-26';
+  };
+
+  let currentYear = rotaYearSelect ? rotaYearSelect.value : getLatestYearWithData();
+  let currentCategory = 'all';
+
+  // Helper to format year code (e.g. "25-26" -> "2025–26")
+  const formatYearLabel = (yearCode) => {
+    if (typeof ROTA_YEARS !== 'undefined') {
+      const found = ROTA_YEARS.find(y => y.code === yearCode);
+      if (found) return found.label;
+    }
+    const parts = yearCode.split('-');
+    if (parts.length === 2) {
+      return `20${parts[0]}–${parts[1]}`;
+    }
+    return yearCode;
+  };
+
+  // Render HTML for a single project card
+  const createProjectCardHTML = (project) => {
+    const collabHTML = project.collaborators && project.collaborators.length > 0
+      ? `<div class="collab-badge">In Collaboration with ${project.collaborators.join(', ')}</div>`
+      : '';
+
+    const objectivesHTML = project.objectives.map(obj => `<li>${obj}</li>`).join('');
+
+    return `
+      <div class="project-card fade-in visible" data-category="${project.categorySlug}" data-year="${project.rotaYear}" tabindex="0" aria-expanded="false">
+        <div class="card-default-view">
+          <div class="project-card-header">
+            <span class="category-badge">${project.category}</span>
+            <span class="hosted-tag">Hosted</span>
+          </div>
+          <h3 class="project-title">${project.name}</h3>
+          <p class="project-description">${project.shortDescription}</p>
+          <div class="project-meta-grid">
+            <div class="meta-item">
+              <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>${project.date} <span class="day-badge">• ${project.day}</span></span>
+            </div>
+            <div class="meta-item">
+              <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>${project.time}</span>
+            </div>
+            <div class="meta-item">
+              <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>${project.venue}</span>
+            </div>
+          </div>
+          <div class="card-trigger">
+            <span>View Objectives</span>
+            <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </div>
+        
+        <div class="project-overlay">
+          <div class="overlay-header">
+            <span class="overlay-label">PROJECT OBJECTIVES</span>
+            <h4 class="overlay-title">${project.name}</h4>
+            ${collabHTML}
+          </div>
+          <ul class="objectives-list">
+            ${objectivesHTML}
+          </ul>
+        </div>
+      </div>
+    `;
+  };
+
+  // Render HTML for empty state when no projects match year/category
+  const createEmptyStateHTML = (yearLabel) => {
+    return `
+      <div class="projects-empty-state fade-in visible">
+        <div class="empty-icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </div>
+        <h3 class="empty-title">No Hosted Projects Yet</h3>
+        <p class="empty-description">We haven't added any hosted projects for Rota Year <span class="empty-year-name">${yearLabel}</span> yet. Please check back soon or select another Rota Year.</p>
+      </div>
+    `;
+  };
+
+  // Attach card event listeners (mobile tap expansion & keyboard enter/space)
+  const attachCardEventListeners = () => {
+    if (!projectsGrid) return;
+    const cards = projectsGrid.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const isExpanded = card.classList.contains('is-expanded');
+        cards.forEach(c => {
+          if (c !== card) {
+            c.classList.remove('is-expanded');
+            c.setAttribute('aria-expanded', 'false');
+          }
+        });
+        card.classList.toggle('is-expanded', !isExpanded);
+        card.setAttribute('aria-expanded', (!isExpanded).toString());
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  };
+
+  // Main Render Function
+  const renderProjects = () => {
+    if (!projectsGrid || typeof HOSTED_PROJECTS === 'undefined') return;
+
+    // 1. Filter projects by Year + Category
+    const filtered = HOSTED_PROJECTS.filter(project => {
+      const matchYear = project.rotaYear === currentYear;
+      const matchCategory = currentCategory === 'all' || project.categorySlug === currentCategory;
+      return matchYear && matchCategory;
+    });
+
+    // 2. Sort filtered projects chronologically descending (latest date first)
+    filtered.sort((a, b) => new Date(b.isoDate) - new Date(a.isoDate));
+
+    // 3. Update UI year labels
+    const yearLabel = formatYearLabel(currentYear);
+    if (currentYearBadge) currentYearBadge.textContent = `ROTA YEAR ${yearLabel}`;
+    if (currentYearText) currentYearText.textContent = yearLabel;
+
+    // 4. Smooth grid transition
+    projectsGrid.style.opacity = '0.4';
+    projectsGrid.style.transform = 'translateY(6px)';
+
+    setTimeout(() => {
+      if (filtered.length > 0) {
+        projectsGrid.innerHTML = filtered.map(createProjectCardHTML).join('');
+        attachCardEventListeners();
+      } else {
+        projectsGrid.innerHTML = createEmptyStateHTML(yearLabel);
+      }
+      projectsGrid.style.opacity = '1';
+      projectsGrid.style.transform = 'translateY(0)';
+    }, 150);
+  };
+
+  // Year Dropdown Event Listener
+  if (rotaYearSelect) {
+    rotaYearSelect.value = currentYear;
+
+    rotaYearSelect.addEventListener('change', (e) => {
+      currentYear = e.target.value;
+      renderProjects();
+    });
+  }
+
+  // Category Filter Buttons Event Listener
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      currentCategory = btn.getAttribute('data-filter');
+      renderProjects();
+    });
+  });
+
+  // Initial render (ensures dates are sorted latest to oldest from load)
+  renderProjects();
+
 });

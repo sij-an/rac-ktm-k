@@ -38,8 +38,8 @@
         <ul class="nav-list">
           <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="#our-people" class="nav-link">Our People</a></li>
-          <li class="nav-item"><a href="#projects" class="nav-link">Partners</a></li>
-          <li class="nav-item"><a href="#gallery" class="nav-link">Community</a></li>
+          <li class="nav-item"><a href="#partners" class="nav-link">Partners</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
           <li class="nav-item"><a href="#team" class="nav-link">Get Involved</a></li>
           <li class="nav-item"><a href="#contact" class="nav-link">FAQ</a></li>
         </ul>
@@ -459,10 +459,10 @@
             <!-- Member 12 -->
             <div class="people-card member-card">
               <div class="people-image-wrapper member-image-wrapper">
-                <img src="assets/images/member12.png" alt="Member 12" class="people-image" loading="lazy">
+                <img src="assets/images/prikesh shrestha.jpg" alt="Prikesh Shrestha" class="people-image" loading="lazy">
               </div>
-              <h4 class="people-name"> Member</h4>
-              <p class="people-club">Name Surname</p>
+              <h4 class="people-name"> Club Member</h4>
+              <p class="people-club">Prikesh Shrestha</p>
             </div>
 
           </div>
@@ -472,7 +472,7 @@
     </section>
 
     <!-- Venue Partner -->
-    <section class="partners-section" id="projects">
+    <section class="partners-section" id="partners">
       <div class="container">
         <div class="section-header text-center fade-in">
           <span class="section-kicker">Our Partner</span>
@@ -542,74 +542,601 @@
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="testimonials-section" id="gallery">
+    <!-- Hosted Projects Section -->
+    <section class="projects-section" id="projects">
       <div class="container">
         <div class="section-header text-center fade-in">
-          <span class="section-kicker">From our neighbors</span>
-          <h2 class="section-title">Warm words from the Kalanki community</h2>
+          <div class="header-badge-wrapper">
+            <span class="section-kicker">OUR PROJECTS</span>
+          </div>
+          <h2 class="section-title">Projects We Hosted</h2>
+          
+
+          <!-- Year Selector & Category Filter Controls -->
+          <div class="projects-controls-container">
+            <div class="year-selector-wrapper">
+              <label for="rotaYearSelect" class="year-select-label">CHOOSE ROTA YEAR</label>
+              <div class="custom-select-box">
+                <select id="rotaYearSelect" class="year-select-dropdown" aria-label="Choose Rota Year">
+                  <option value="25-26" selected>25–26 (Rota Year 2025–26)</option>
+                  <option value="26-27">26–27 (Rota Year 2026–27)</option>
+                </select>
+                <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+
+            <!-- Category Filter Bar -->
+            <div class="projects-filter" role="tablist" aria-label="Filter projects by category">
+              <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Hosted Projects</button>
+              <button class="filter-btn" data-filter="service" role="tab" aria-selected="false">Service Projects</button>
+              <button class="filter-btn" data-filter="fellowship" role="tab" aria-selected="false">Fellowship</button>
+              <button class="filter-btn" data-filter="club-admin" role="tab" aria-selected="false">Club Administration</button>
+              <button class="filter-btn" data-filter="training" role="tab" aria-selected="false">Training & Leadership</button>
+            </div>
+          </div>
         </div>
 
-        <div class="testimonials-grid">
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <p class="quote-text">
-                &ldquo;RAC KTM KALANKI is new in the neighborhood, but their early efforts already feel genuine. They
-                listen first, which is rare. We're glad to see something community-led finally starting here in
-                Kalanki.&rdquo;
-              </p>
-            </div>
-            <div class="testimonial-author">
-              <img
-                src="https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/generated-content/headshots/70cb6e2f-a15f-464a-b14c-8231cec01a5f.png"
-                alt="Anita Sharma" class="author-avatar" loading="lazy">
-              <div class="author-info">
-                <h4 class="author-name">Anita Sharma</h4>
-                <p class="author-role">Local resident, Kalanki</p>
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project 01 -->
+          <div class="project-card fade-in" data-category="club-admin" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Club Administration</span>
+                <span class="hosted-tag">Hosted</span>
               </div>
+              <h3 class="project-title">President Elect Finalization</h3>
+              <p class="project-description">A leadership transition initiative focused on finalizing the President-Elect and ensuring continuity in club leadership.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>20 December 2025 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>11:00 AM – 12:30 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Basiyo Office</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">President Elect Finalization</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To finalize and endorse the President-Elect for the upcoming Rotary Year through a transparent and democratic process.</li>
+                <li>To ensure a smooth leadership transition and continuity of club operations.</li>
+                <li>To identify and empower future leaders capable of guiding the club toward sustained growth and impact.</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <p class="quote-text">
-                &ldquo;It is still early days for the group, but their first community meet-ups in Kathmandu have a
-                real, neighborly feel. No big promises, just people showing up for each other. That is how trust gets
-                built.&rdquo;
-              </p>
-            </div>
-            <div class="testimonial-author">
-              <img
-                src="https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/generated-content/headshots/2c59be7f-f3ff-4b02-9f3f-62b8f1633302.png"
-                alt="Sujan Maharjan" class="author-avatar" loading="lazy">
-              <div class="author-info">
-                <h4 class="author-name">Sujan Maharjan</h4>
-                <p class="author-role">Shop owner, Kalanki</p>
+          <!-- Project 02 -->
+          <div class="project-card fade-in" data-category="club-admin" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Club Administration</span>
+                <span class="hosted-tag">Hosted</span>
               </div>
+              <h3 class="project-title">2nd ZRR Visit</h3>
+              <p class="project-description">A virtual visit focused on reviewing club progress, receiving guidance, and strengthening coordination with district leadership.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>11 June 2026 <span class="day-badge">• Thursday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>9:00 PM – 10:45 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Google Meet</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">2nd ZRR Visit</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To review the club's activities and progress during the Rotaract year.</li>
+                <li>To facilitate communication between the club and district leadership.</li>
+                <li>To receive guidance and recommendations for future projects and initiatives.</li>
+                <li>To strengthen member engagement and organizational development.</li>
+                <li>To ensure alignment with district goals and expectations.</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card fade-in">
-            <div class="testimonial-content">
-              <p class="quote-text">
-                &ldquo;They are just starting out, but their approach is refreshing. Instead of claiming to fix
-                everything at once, they asked neighbors what was actually needed. That simple honesty stood out to many
-                of us in Bagmati Province.&rdquo;
-              </p>
-            </div>
-            <div class="testimonial-author">
-              <img
-                src="https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/generated-content/headshots/43692217-ca1d-4a87-a08d-8d74927fb0c4.png"
-                alt="Priya Gurung" class="author-avatar" loading="lazy">
-              <div class="author-info">
-                <h4 class="author-name">Priya Gurung</h4>
-                <p class="author-role">Teacher, Kathmandu</p>
+          <!-- Project 03 -->
+          <div class="project-card fade-in" data-category="service" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Service Project</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Road Safety Awareness Session</h3>
+              <p class="project-description">An awareness session designed to help students understand road safety, traffic rules, pedestrian safety, and responsible road behavior.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>8 June 2026 <span class="day-badge">• Monday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>2:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Shree Jana Udaya Sec. School, Bhaisepati</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </div>
             </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Road Safety Awareness Session</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To educate students about road safety rules and traffic regulations.</li>
+                <li>To raise awareness about pedestrian safety and accident prevention.</li>
+                <li>To encourage responsible behavior while using roads and public spaces.</li>
+                <li>To familiarize students with traffic signs and safe road-crossing practices.</li>
+              </ul>
+            </div>
           </div>
+
+          <!-- Project 04 -->
+          <div class="project-card fade-in" data-category="service" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Service Project</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Nationwide Cleaning Campaign 2026</h3>
+              <p class="project-description">A community service initiative focused on cleanliness, environmental responsibility, waste management, and preservation of shared spaces.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>5 June 2026 <span class="day-badge">• Friday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>4:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Mahalaxmistan Mandir, Bhaisepati</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Nationwide Cleaning Campaign 2026</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To promote cleanliness and environmental responsibility through community action.</li>
+                <li>To contribute to the maintenance and preservation of Mahalaxmistan Temple premises.</li>
+                <li>To raise awareness about proper waste management and hygiene practices.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 05 -->
+          <div class="project-card fade-in" data-category="service" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Service Project</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Zonal Painting</h3>
+              <p class="project-description">A collaborative painting initiative aimed at improving and refreshing the living environment of the children at Anmol Children Development Home.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>28 March 2026 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>1:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Anmol Children Dev. Home, Baneshwor</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Zonal Painting</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To improve the physical environment and aesthetics of the orphanage.</li>
+                <li>To create a more positive and child-friendly living space for residents.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 06 -->
+          <div class="project-card fade-in" data-category="fellowship" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Fellowship</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Goodwill Visit From RAC Sainbu Bhaisepati</h3>
+              <p class="project-description">A goodwill visit focused on strengthening fellowship, networking, idea exchange, and future collaboration between Rotaract clubs.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>7 February 2026 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>11:00 AM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Basiyo Office</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Goodwill Visit From RAC Sainbu Bhaisepati</h4>
+                <div class="collab-badge">In Collaboration with RAC Sainbu Bhaisepati</div>
+              </div>
+              <ul class="objectives-list">
+                <li>To strengthen fellowship between both clubs.</li>
+                <li>To promote networking and relationship-building among members.</li>
+                <li>To exchange ideas and experiences related to Rotaract activities.</li>
+                <li>To encourage future collaboration and joint initiatives.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 07 -->
+          <div class="project-card fade-in" data-category="club-admin" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Club Administration</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">1st ZRR Visit</h3>
+              <p class="project-description">A club review and guidance session focused on progress, future plans, organizational development, and coordination with district leadership.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>22 November 2025 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>2:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Basiyo Office</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">1st ZRR Visit</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To facilitate communication between the club and district leadership.</li>
+                <li>To review the club's progress, activities, and future plans.</li>
+                <li>To receive guidance and recommendations for club development.</li>
+                <li>To strengthen member engagement and organizational effectiveness.</li>
+                <li>To align club goals with the vision and objectives of the district.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 08 -->
+          <div class="project-card fade-in" data-category="training" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Training & Leadership</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Club COTS</h3>
+              <p class="project-description">A Club Officers Training Seminar focused on leadership, administration, project planning, teamwork, and preparing officers for their responsibilities.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>28 February 2026 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>12:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Basiyo Office</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Club COTS</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To provide club officers with a clear understanding of their roles and responsibilities.</li>
+                <li>To develop leadership, communication, and team management skills among board members.</li>
+                <li>To enhance knowledge of club administration, project planning, and execution.</li>
+                <li>To promote effective coordination and collaboration within the leadership team.</li>
+                <li>To strengthen officers' capacity to organize impactful service and professional development projects.</li>
+                <li>To encourage strategic planning for a successful and sustainable Rotaract year.</li>
+                <li>To build confidence and preparedness among officers for carrying out their duties effectively.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 09 -->
+          <div class="project-card fade-in" data-category="fellowship" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Fellowship</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Bond Beyond Bhailo</h3>
+              <p class="project-description">A fellowship initiative designed to strengthen relationships, engagement, teamwork, and a sense of belonging among club members.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>20 November 2025 <span class="day-badge">• Thursday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 16 14"></polyline></svg>
+                  <span>7:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Cooker's Coffee, Baneshwor</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Bond Beyond Bhailo</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To provide a platform for meaningful interaction and relationship-building.</li>
+                <li>To enhance member engagement and participation in club activities.</li>
+                <li>To foster unity, friendship, and a sense of belonging within the club.</li>
+                <li>To encourage teamwork and collaboration through interactive games and activities.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 10 -->
+          <div class="project-card fade-in" data-category="fellowship" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Fellowship</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Retro de Nepal</h3>
+              <p class="project-description">A fellowship-focused event bringing together Rotaractors, alumni, professionals, sponsors, and community members for networking, engagement, and support for future initiatives.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>18 January 2026 <span class="day-badge">• Sunday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>6:00 AM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Busy Bee Cafe</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Retro de Nepal</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To strengthen fellowship and camaraderie among Rotaractors, alumni, and community members.</li>
+                <li>To mobilize resources that support future club activities and community service projects.</li>
+                <li>To provide opportunities for networking and meaningful relationship-building.</li>
+                <li>To strengthen the public image of the club.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 11 -->
+          <div class="project-card fade-in" data-category="service" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Service Project</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Sankat Pachi Sahara: A Post GenZ Movement Initiative</h3>
+              <p class="project-description">A humanitarian and institutional support initiative focused on improving the working environment and supporting traffic police personnel serving the Kalanki community.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>15 – 22 Sept 2025 <span class="day-badge">• Mon – Mon</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>12:00 PM – 6:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Kalanki Traffic Police Station</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Sankat Pachi Sahara</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To improve the working and living conditions of traffic police personnel stationed at Kalanki Traffic Police Station.</li>
+                <li>To support the renovation and enhancement of the station's physical infrastructure through furniture and painting materials.</li>
+                <li>To promote values of service, gratitude, and civic responsibility among Rotaractors and community members.</li>
+                <li>To promote a culture of gratitude and respect towards frontline public service providers.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 12 -->
+          <div class="project-card fade-in" data-category="club-admin" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Club Administration</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">First Installation Ceremony</h3>
+              <p class="project-description">The formal installation ceremony establishing the club's leadership, vision, goals, and foundation for the new Rotaract year.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>19 July 2025 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>4:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Drisaya Hotel</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">First Installation Ceremony</h4>
+              </div>
+              <ul class="objectives-list">
+                <li>To officially establish the Rotaract Club of Kathmandu Kalanki.</li>
+                <li>To introduce the new team, visions, and goals for the upcoming year.</li>
+                <li>To strengthen unity, commitment, and leadership values among all members.</li>
+                <li>To foster fellowship among members and set the tone for the new Rotaract year.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Project 13 -->
+          <div class="project-card fade-in" data-category="fellowship" tabindex="0" aria-expanded="false">
+            <div class="card-default-view">
+              <div class="project-card-header">
+                <span class="category-badge">Fellowship</span>
+                <span class="hosted-tag">Hosted</span>
+              </div>
+              <h3 class="project-title">Teej Daar Celebration</h3>
+              <p class="project-description">A cultural fellowship celebration focused on bonding, cultural appreciation, inter-club relations, and women's empowerment.</p>
+              <div class="project-meta-grid">
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  <span>30 August 2025 <span class="day-badge">• Saturday</span></span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>1:00 PM – 5:00 PM</span>
+                </div>
+                <div class="meta-item">
+                  <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Thak Khola, New Baneshwor</span>
+                </div>
+              </div>
+              <div class="card-trigger">
+                <span>View Objectives</span>
+                <svg class="trigger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </div>
+            
+            <div class="project-overlay">
+              <div class="overlay-header">
+                <span class="overlay-label">PROJECT OBJECTIVES</span>
+                <h4 class="overlay-title">Teej Daar Celebration</h4>
+                <div class="collab-badge">In Collaboration with RAC Kopundol</div>
+              </div>
+              <ul class="objectives-list">
+                <li>To celebrate Teej 2082 while strengthening fellowship among members of the Rotaract Club of Kopundol and the Rotaract Club of Kathmandu Kalanki.</li>
+                <li>To create a joyful and culturally rich space for bonding and togetherness while empowering women on the occasion of Teej.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -666,25 +1193,48 @@
             <div class="get-features">
 
                 <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
                     <h3>Community Service</h3>
                     <p>Lead projects that create meaningful and lasting impact.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🎓</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
                     <h3>Leadership</h3>
                     <p>Develop confidence through real leadership opportunities.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
                     <h3>Networking</h3>
                     <p>Build friendships with professionals and young leaders.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71 1.26-1.5 1.5-2.5l-4.5-4.5c-1 0-1.79.79-2.5 1.5z"></path>
+                            <path d="M12 15l-3-3 6.5-6.5a2.121 2.121 0 0 1 3 3L12 15z"></path>
+                        </svg>
+                    </div>
                     <h3>Personal Growth</h3>
                     <p>Grow through workshops, projects, and hands-on experience.</p>
                 </div>
@@ -858,7 +1408,7 @@
             <li><a href="#hero" class="footer-link">Home</a></li>
             <li><a href="#about" class="footer-link">About</a></li>
             <li><a href="#contact" class="footer-link">Contact</a></li>
-            <li><a href="#gallery" class="footer-link">Blog</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
           </ul>
         </div>
       </div>
@@ -915,6 +1465,7 @@
   </div>
 
   <!-- Scripts are here -->
+  <script src="js/projects-data.js"></script>
   <script src="js/script.js"></script>
 
   <!-- Donate Modal Script -->
