@@ -471,19 +471,22 @@ button {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
   margin-top: 0.5rem;
   margin-bottom: var(--spacing-md);
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
-  line-height: 1.6;
+  line-height: 1.75;
+  max-width: 44ch;
+  font-weight: 400;
 }
 
 .hero-actions {
