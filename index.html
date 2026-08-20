@@ -23,7 +23,7 @@
 
 <body>
 
-  
+
   <!-- Navigation -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
@@ -82,34 +82,63 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="container hero-container">
-        <div class="hero-content fade-in">
-          <div class="badge-kicker"><b>Disctrict</b>&nbsp;3292, &nbsp; <b>Zone</b>&nbsp;11</div>
-          <h1 class="hero-title">Today's Action.<br>Tomorrow's Legacy.</h1>
-          <p class="hero-description">
-            To build an enduring legacy by empowering members to evolve into visionary 
-            leaders whose personal growth and dedicated community service fuel sustainable impact across generations.
+    <section class="hero-section hero-cover-section" id="hero">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-image" style="background-image: url('assets/images/first_installment.jpeg');"></div>
+
+      <div class="container hero-container-immersive">
+        <div class="hero-content-box">
+          <div class="hero-kicker-wrapper">
+            <span class="hero-kicker-badge">DISTRICT 3292 &middot; ZONE 11</span>
+            <span class="hero-charter-tag">Chartered 3<sup>rd</sup> Sept 2025</span>
+          </div>
+
+          <h1 class="hero-title-immersive">
+            Today's Action.<br>
+            <span class="hero-title-gold">Tomorrow's Legacy.</span>
+          </h1>
+
+          <p class="hero-description-immersive">
+            Building leaders, creating impact, and serving our community with purpose.
+            To build an enduring legacy by empowering members to evolve into visionary leaders whose personal growth and
+            dedicated service fuel sustainable impact.
           </p>
-          <div class="hero-actions">
-            <a href="about.html" class="btn btn-primary">Learn more about us</a>
-            <a href="faq.html" class="btn btn-outline">Reach out to us</a>
-            <button type="button" class="btn btn-primary" id="donateBtn" aria-haspopup="dialog">
+
+          <div class="hero-actions-immersive">
+            <a href="about.html" class="btn btn-gold-primary">Learn more about us</a>
+            <a href="faq.html" class="btn btn-glass-secondary">Reach out to us</a>
+            <button type="button" class="btn btn-gold-primary" id="donateBtn" aria-haspopup="dialog">
               <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9"></circle>
-                <path d="M12 15.5s-3.5-2.2-3.5-4.2a2.2 2.2 0 0 1 4-1.3 2.2 2.2 0 0 1 4 1.3c0 2-3.5 4.2-3.5 4.2z" fill="currentColor" stroke="none"></path>
+                <path d="M12 15.5s-3.5-2.2-3.5-4.2a2.2 2.2 0 0 1 4-1.3 2.2 2.2 0 0 1 4 1.3c0 2-3.5 4.2-3.5 4.2z"
+                  fill="currentColor" stroke="none"></path>
               </svg>
               <span>Donate</span>
             </button>
           </div>
         </div>
 
-        <div class="hero-media fade-in">
-          <div class="hero-image-wrapper">
-            <img
-              src="assets/images/first_installment.jpeg"
-              alt="RAC KTM KALANKI Community Work in Kathmandu" class="hero-image" loading="eager">
+        <!-- Installation Identity Card -->
+        <div class="hero-identity-card">
+          <div class="identity-card-inner">
+            <div class="identity-badge-header">
+              <svg class="identity-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+              <span class="identity-kicker">FIRST INSTALLATION</span>
+            </div>
+            <h3 class="identity-title">The Beginning of Our Journey</h3>
+            <p class="identity-text">
+              Established through leadership, service &amp; fellowship. Rotaract Club of Kathmandu Kalanki connects
+              young leaders committed to meaningful community impact.
+            </p>
+            <div class="identity-meta-row">
+              <span class="meta-label">SPONSORED BY</span>
+              <span class="meta-val">Rotary Club of Kathmandu Kalanki</span>
+            </div>
           </div>
         </div>
       </div>
@@ -118,7 +147,8 @@
 
 
   <!-- Donation Modal -->
-  <div class="donate-modal-overlay" id="donateOverlay" role="dialog" aria-modal="true" aria-labelledby="donateModalTitle" aria-hidden="true">
+  <div class="donate-modal-overlay" id="donateOverlay" role="dialog" aria-modal="true"
+    aria-labelledby="donateModalTitle" aria-hidden="true">
     <div class="donate-modal">
       <button class="donate-modal-close" id="donateClose" aria-label="Close donation popup">&times;</button>
 
@@ -126,14 +156,23 @@
       <div class="donate-modal-header">
         <h2 class="donate-modal-title" id="donateModalTitle">Support Our Mission</h2>
         <p class="donate-modal-subtitle">
-          Every contribution helps us create a greater impact through community service, leadership, youth development, and humanitarian projects.
+          Every contribution helps us create a greater impact through community service, leadership, youth development,
+          and humanitarian projects.
         </p>
       </div>
 
       <!-- Global IME Bank QR Section -->
       <div class="donate-qr-section">
         <div class="donate-bank-badge">
-          <svg class="bank-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M3 10h18"></path><path d="M12 3l9 7H3l9-7z"></path><path d="M7 10v8"></path><path d="M12 10v8"></path><path d="M17 10v8"></path></svg>
+          <svg class="bank-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18"></path>
+            <path d="M3 10h18"></path>
+            <path d="M12 3l9 7H3l9-7z"></path>
+            <path d="M7 10v8"></path>
+            <path d="M12 10v8"></path>
+            <path d="M17 10v8"></path>
+          </svg>
           <span>Global IME Bank QR Payment</span>
         </div>
         <div class="donate-qr-frame">
@@ -145,7 +184,8 @@
       <div class="donate-remark-box">
         <h4 class="donate-remark-heading">Payment Reference</h4>
         <p class="donate-remark-text">
-          While making your donation, please mention your <strong>Full Name</strong> followed by <strong>&ldquo;Rotaract&rdquo;</strong> in the payment remarks or reference field.
+          While making your donation, please mention your <strong>Full Name</strong> followed by
+          <strong>&ldquo;Rotaract&rdquo;</strong> in the payment remarks or reference field.
         </p>
         <div class="donate-remark-example">
           <span class="donate-example-label">Example:</span>
