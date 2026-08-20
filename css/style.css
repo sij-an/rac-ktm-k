@@ -7,18 +7,18 @@
    1. Design Tokens & CSS Variables
    -------------------------------------------------------------------------- */
 :root {
-  /* Official Rotary Color Palette */
-  --rotary-royal-blue: #17458f;
-  --rotary-royal-blue-hover: #123773;
+  /* Sophisticated Deep Desaturated Navy Color Palette */
+  --rotary-royal-blue: #1b365d;
+  --rotary-royal-blue-hover: #132746;
   --rotary-gold: #f7a81b;
   --rotary-gold-hover: #d99011;
-  --rotary-azure: #0067c8;
-  --rotary-azure-hover: #0053a4;
+  --rotary-azure: #2b4c7e;
+  --rotary-azure-hover: #1b365d;
 
   --bg-canvas: #f0f4f9;
   --bg-canvas-alt: #ffffff;
   --bg-card: #ffffff;
-  --bg-dark: #0e2447;
+  --bg-dark: #0f223d;
 
   --text-primary: #172b4d;
   --text-secondary: #4a5568;
@@ -27,7 +27,7 @@
 
   --primary-plum: var(--rotary-royal-blue);
   --primary-plum-hover: var(--rotary-royal-blue-hover);
-  --primary-light: #ebf3fa;
+  --primary-light: #edf3f9;
 
   --secondary-navy: var(--rotary-gold);
   --secondary-navy-hover: var(--rotary-gold-hover);
@@ -61,9 +61,9 @@
   --radius-pill: 9999px;
 
   /* Elevation & Shadows */
-  --shadow-sm: 0 2px 8px rgba(23, 69, 143, 0.06);
-  --shadow-md: 0 8px 24px rgba(23, 69, 143, 0.1);
-  --shadow-lg: 0 16px 40px rgba(23, 69, 143, 0.14);
+  --shadow-sm: 0 2px 8px rgba(27, 54, 93, 0.06);
+  --shadow-md: 0 8px 24px rgba(27, 54, 93, 0.1);
+  --shadow-lg: 0 16px 40px rgba(27, 54, 93, 0.14);
 
   /* Animation Timings */
   --transition-fast: 0.2s ease;
@@ -172,10 +172,25 @@ button {
   font-size: 1.125rem;
   color: var(--text-secondary);
   line-height: 1.7;
+  position: relative;
+}
+
+.section-description::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 1.25rem auto 0 auto;
+  background: linear-gradient(90deg, var(--rotary-gold), var(--rotary-royal-blue));
+  border-radius: var(--radius-pill);
 }
 
 .section-header {
   margin-bottom: var(--spacing-xl);
+}
+
+.brand-highlight {
+  color: var(--rotary-royal-blue);
 }
 
 /* Buttons */
@@ -287,7 +302,7 @@ button {
 
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 8px 30px -6px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 8px 30px -6px rgba(27, 54, 93, 0.07);
   border-color: rgba(203, 213, 225, 0.6);
 }
 
@@ -364,13 +379,13 @@ button {
 
 .nav-link:hover {
   color: var(--rotary-royal-blue);
-  background-color: rgba(23, 69, 143, 0.06);
+  background-color: rgba(27, 54, 93, 0.06);
 }
 
 .nav-link.active {
   color: var(--rotary-royal-blue);
   font-weight: 600;
-  background-color: rgba(23, 69, 143, 0.08);
+  background-color: rgba(27, 54, 93, 0.08);
 }
 
 .nav-actions {
@@ -393,7 +408,7 @@ button {
   background-color: var(--rotary-royal-blue);
   border: 1px solid transparent;
   border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba(23, 69, 143, 0.2);
+  box-shadow: 0 2px 8px rgba(27, 54, 93, 0.2);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   cursor: pointer;
@@ -402,7 +417,7 @@ button {
 
 .nav-btn:hover {
   background-color: var(--rotary-royal-blue-hover);
-  box-shadow: 0 4px 14px rgba(23, 69, 143, 0.32);
+  box-shadow: 0 4px 14px rgba(27, 54, 93, 0.32);
   transform: translateY(-1px);
 }
 
@@ -532,19 +547,29 @@ button {
    6. About Section
    -------------------------------------------------------------------------- */
 .about-section {
-  padding-top: var(--spacing-xxl);
-  padding-bottom: var(--spacing-xxl);
-  background-color: var(--bg-canvas-alt);
-  border-radius: var(--radius-xl);
-  margin-top: var(--spacing-xxl);
-  margin-bottom: var(--spacing-xxl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(226, 232, 240, 0.7);
+  padding-top: clamp(3.25rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
+  background-color: var(--bg-canvas);
   position: relative;
   overflow: hidden;
 }
 
-.about-section::before {
+.about-section,
+.our-people-section,
+.partners-section,
+.projects-section,
+.get-involved-section,
+.faq-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before,
+.our-people-section::before,
+.partners-section::before,
+.projects-section::before,
+.get-involved-section::before,
+.faq-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -632,7 +657,7 @@ button {
 .about-quote {
   margin-top: 2rem;
   padding: 1.5rem 1.75rem;
-  background: linear-gradient(135deg, rgba(23, 69, 143, 0.04) 0%, rgba(247, 168, 27, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(27, 54, 93, 0.04) 0%, rgba(247, 168, 27, 0.06) 100%);
   border-left: 4px solid var(--rotary-gold);
   border-radius: var(--radius-sm);
   display: flex;
@@ -644,7 +669,7 @@ button {
 
 .about-quote:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(23, 69, 143, 0.08);
+  box-shadow: 0 6px 20px rgba(27, 54, 93, 0.08);
 }
 
 .quote-icon-badge {
@@ -657,7 +682,7 @@ button {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(23, 69, 143, 0.2);
+  box-shadow: 0 4px 12px rgba(27, 54, 93, 0.2);
 }
 
 .quote-svg {
@@ -748,7 +773,7 @@ button {
 }
 
 .leadership-bg {
-  background-color: rgba(23, 69, 143, 0.1);
+  background-color: rgba(27, 54, 93, 0.1);
   color: var(--rotary-royal-blue);
 }
 
@@ -830,7 +855,8 @@ button {
    6.5 Our People Section (Board of Directors & Club Members)
    -------------------------------------------------------------------------- */
 .our-people-section {
-  padding-bottom: var(--spacing-xxl);
+  padding-top: clamp(3.25rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
   background-color: var(--bg-canvas);
 }
 
@@ -888,7 +914,7 @@ button {
   padding: 2rem 1.25rem 1.75rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(23, 69, 143, 0.06);
+  border: 1px solid rgba(27, 54, 93, 0.06);
   transition: transform var(--transition-normal),
     box-shadow var(--transition-normal),
     border-color var(--transition-normal);
@@ -925,7 +951,7 @@ button {
   width: 100px;
   height: 100px;
   border: 3px solid var(--border-accent);
-  box-shadow: 0 2px 10px rgba(23, 69, 143, 0.08);
+  box-shadow: 0 2px 10px rgba(27, 54, 93, 0.08);
 }
 
 .people-image {
@@ -935,7 +961,7 @@ button {
   transition: transform var(--transition-slow);
   /* Fallback for missing images: Rotary blue background with user silhouette */
   background-color: var(--primary-light);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317458f' opacity='0.25'%3E%3Cpath d='M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b365d' opacity='0.25'%3E%3Cpath d='M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center 60%;
   background-size: 50%;
@@ -987,7 +1013,9 @@ button {
    7. Partners Section (Venue Partner)
    -------------------------------------------------------------------------- */
 .partners-section {
-  padding-bottom: var(--spacing-xxl);
+  padding-top: clamp(3.25rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
+  background-color: var(--bg-canvas);
 }
 
 .partner-venue-card {
@@ -1037,14 +1065,14 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: rgba(23, 69, 143, 0.08);
+  background-color: rgba(27, 54, 93, 0.08);
   color: var(--rotary-royal-blue);
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 700;
   padding: 0.4rem 0.9rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(23, 69, 143, 0.2);
+  border: 1px solid rgba(27, 54, 93, 0.2);
   margin-bottom: 1.5rem;
 }
 
@@ -1142,7 +1170,7 @@ button {
 .partner-quote-box {
   margin-bottom: 1.5rem;
   padding: 1rem 1.25rem;
-  background: linear-gradient(135deg, rgba(247, 168, 27, 0.08) 0%, rgba(23, 69, 143, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(247, 168, 27, 0.08) 0%, rgba(27, 54, 93, 0.04) 100%);
   border-left: 4px solid var(--rotary-gold);
   border-radius: var(--radius-sm);
 }
@@ -1194,7 +1222,9 @@ button {
    8. Hosted Projects Section
    -------------------------------------------------------------------------- */
 .projects-section {
-  padding-bottom: var(--spacing-xxl);
+  padding-top: clamp(3.25rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
+  background-color: var(--bg-canvas);
 }
 
 .header-badge-wrapper {
@@ -1686,7 +1716,9 @@ button {
    10. FAQ Accordion Section
    -------------------------------------------------------------------------- */
 .faq-section {
-  padding-bottom: var(--spacing-xxl);
+  padding-top: clamp(3.25rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4rem, 7vw, 5.5rem);
+  background-color: var(--bg-canvas);
 }
 
 .faq-header {
@@ -1773,57 +1805,58 @@ button {
    11. Footer Section
    -------------------------------------------------------------------------- */
 .site-footer {
-  background-color: #005DAA;
+  background-color: var(--rotary-royal-blue);
   color: var(--text-light);
-  padding-top: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-top: 4px solid var(--rotary-gold);
+  padding-top: clamp(2rem, 3.5vw, 2.75rem);
+  padding-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-top: 3px solid var(--rotary-gold);
 }
 
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-logo-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
 }
 
 .footer-logo {
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   filter: hue-rotate(290deg) saturate(1.4) brightness(0.95);
 }
 
 .footer-brand-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-light);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .footer-location {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
 }
 
 .footer-nav-list {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.9375rem;
   font-weight: 600;
   transition: color var(--transition-fast), transform var(--transition-fast);
   display: inline-block;
@@ -1835,10 +1868,10 @@ button {
 }
 
 .footer-bottom {
-  padding-top: var(--spacing-md);
+  padding-top: 1.25rem;
   text-align: center;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* --------------------------------------------------------------------------
@@ -2115,8 +2148,9 @@ button {
 ========================================================== */
 
 .get-involved-section{
-    padding:7rem 0;
-    background:#ffffff;
+    padding-top: clamp(3.25rem, 6vw, 4.5rem);
+    padding-bottom: clamp(4rem, 7vw, 5.5rem);
+    background-color: var(--bg-canvas);
     position:relative;
 }
 
@@ -2130,9 +2164,9 @@ button {
         #fbfcfe 60%,
         #f3f7fc 100%
     );
-    border:1px solid rgba(23,69,143,.08);
+    border:1px solid rgba(27,54,93,.08);
     border-radius:30px;
-    box-shadow:0 20px 60px rgba(23,69,143,.08);
+    box-shadow:0 20px 60px rgba(27,54,93,.08);
 }
 
 .get-title{
@@ -2166,7 +2200,7 @@ button {
 
 .feature-card{
     background:#ffffff;
-    border:1px solid rgba(23,69,143,.08);
+    border:1px solid rgba(27,54,93,.08);
     border-radius:20px;
     padding:2rem 1.5rem;
     text-align:center;
@@ -2176,8 +2210,8 @@ button {
 
 .feature-card:hover{
     transform:translateY(-6px);
-    border-color:rgba(23,69,143,.18);
-    box-shadow:0 18px 35px rgba(23,69,143,.10);
+    border-color:rgba(27,54,93,.18);
+    box-shadow:0 18px 35px rgba(27,54,93,.10);
 }
 
 .feature-icon{
@@ -2271,10 +2305,9 @@ button {
 
 /* Space between Get Involved and FAQ */
 .get-involved-section{
-    margin-bottom: 5rem;
+    margin-bottom: 0;
 }
 
-/* Prevent extra spacing from FAQ itself */
 .faq-section{
     margin-top: 0;
 }

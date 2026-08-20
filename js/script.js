@@ -37,40 +37,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     2. Navbar Scroll Styling & Active Link ScrollSpy
+     2. Navbar Scroll Styling & Active Link Highlighting
      -------------------------------------------------------------------------- */
   const navbar = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id]');
   
   const handleScroll = () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (navbar) {
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }
-
-    // ScrollSpy active link highlighting
-    let currentSectionId = '';
-    const scrollPosition = window.scrollY + 120;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (currentSectionId && link.getAttribute('href') === `#${currentSectionId}`) {
-        link.classList.add('active');
-      }
-    });
   };
 
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // Initial check
+
+  // Active link highlighting based on current page URL
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPath || (currentPath === '' && linkHref === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
 
   /* --------------------------------------------------------------------------
      3. FAQ Accordion Interactivity
