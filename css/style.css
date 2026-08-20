@@ -1191,6 +1191,32 @@ button {
   border-radius: var(--radius-pill);
 }
 
+.charter-sub-section .subsection-title {
+  padding-bottom: 0;
+}
+
+.charter-sub-section .subsection-title::after {
+  content: none;
+}
+
+.charter-sub-section .members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.charter-sub-section .members-grid .people-card {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+  .charter-sub-section .members-grid {
+    gap: 1.25rem;
+  }
+}
+
 /* ---- Board of Directors Grid ---- */
 .board-grid {
   display: grid;
