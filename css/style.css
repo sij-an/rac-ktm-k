@@ -1218,6 +1218,183 @@ button {
   }
 }
 
+/* ── Partners Subsection Titles ─────────────────────────────────────── */
+.partners-subsection {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.partners-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.partners-subsection-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.partners-subsection-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rotary-gold), var(--rotary-royal-blue));
+  border-radius: var(--radius-pill);
+}
+
+/* ── Rotaract Network Cards ─────────────────────────────────────────── */
+.rotaract-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.rotaract-partner-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.rotaract-partner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rotary-gold) 0%, var(--rotary-royal-blue) 100%);
+}
+
+.rotaract-partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-accent);
+}
+
+.rotaract-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 1.75rem 1.25rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.rotaract-logo-box {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.rotaract-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.35rem;
+}
+
+.rotaract-relationship-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.rotaract-badge-twin {
+  background-color: var(--primary-light);
+  color: var(--rotary-royal-blue);
+  border: 1px solid rgba(27, 54, 93, 0.2);
+}
+
+.rotaract-badge-sister {
+  background-color: #fdf6e8;
+  color: var(--rotary-gold-hover);
+  border: 1px solid rgba(247, 168, 27, 0.3);
+}
+
+.rotaract-relationship-badge .badge-icon {
+  width: 14px;
+  height: 14px;
+  color: inherit;
+}
+
+.rotaract-card-body {
+  padding: 1.5rem 1.75rem 2rem;
+}
+
+.rotaract-club-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--rotary-royal-blue);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.rotaract-club-desc {
+  font-family: var(--font-body);
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* Rotaract grid responsive */
+@media screen and (max-width: 768px) {
+  .rotaract-partners-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .rotaract-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .rotaract-card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rotaract-logo-box {
+    width: 68px;
+    height: 68px;
+  }
+
+  .rotaract-club-name {
+    font-size: 1.05rem;
+  }
+}
+
+
 /* --------------------------------------------------------------------------
    8. Hosted Projects Section
    -------------------------------------------------------------------------- */
