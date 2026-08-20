@@ -105,13 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
      -------------------------------------------------------------------------- */
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.15
+    rootMargin: '0px 0px 50px 0px',
+    threshold: 0
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting || entry.intersectionRatio > 0) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target); // Reveal once
       }
@@ -119,7 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   const fadeElements = document.querySelectorAll('.fade-in');
-  fadeElements.forEach(el => revealObserver.observe(el));
+  fadeElements.forEach(el => {
+    // Initial sync check: elements in or above the current scroll position are marked visible immediately on load/refresh
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 50) {
+      el.classList.add('visible');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 
   /* --------------------------------------------------------------------------
      5. Hosted Projects Showcase - Year & Category Filtering + Date Sorting
