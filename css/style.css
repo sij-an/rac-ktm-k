@@ -477,13 +477,15 @@ button {
    -------------------------------------------------------------------------- */
 .hero-cover-section {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: clamp(3rem, 5vw, 4.5rem);
+  padding-top: clamp(6rem, 10vw, 8rem);
   padding-bottom: clamp(3rem, 5vw, 4.5rem);
   overflow: hidden;
   background-color: #0f172a;
+  margin: 0;
+  border: none;
 }
 
 .hero-bg-overlay {
@@ -491,9 +493,9 @@ button {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(15, 23, 42, 0.95) 0%,
-    rgba(27, 54, 93, 0.88) 55%,
-    rgba(15, 23, 42, 0.82) 100%
+    rgba(10, 18, 36, 0.92) 0%,
+    rgba(18, 40, 75, 0.82) 50%,
+    rgba(10, 18, 36, 0.75) 100%
   );
   z-index: 2;
 }
@@ -502,8 +504,9 @@ button {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center 35%;
-  filter: brightness(0.85) contrast(1.08);
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.9) contrast(1.05);
   z-index: 1;
   transform: scale(1.02);
   transition: transform 12s ease-out;
@@ -724,15 +727,16 @@ button {
 /* Responsive Hero Rules */
 @media screen and (max-width: 992px) {
   .hero-cover-section {
-    min-height: auto;
-    padding-top: 3.5rem;
+    min-height: 85vh;
+    padding-top: 6rem;
     padding-bottom: 3.5rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .hero-cover-section {
-    padding-top: 2.75rem;
+    min-height: 80vh;
+    padding-top: 5.5rem;
     padding-bottom: 2.75rem;
   }
 
