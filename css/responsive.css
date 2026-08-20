@@ -53,6 +53,17 @@
     height: 110px;
   }
 
+  /* Charter Team: 4-col rows → 2 cols each */
+  .charter-row-4 {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .charter-row-4 .people-card {
+    flex: 0 1 calc(50% - 0.75rem);
+    max-width: none;
+  }
+
   .cta-card {
     padding: 3rem 2rem;
   }
@@ -227,6 +238,34 @@
     width: 85px;
     height: 85px;
   }
+
+  /* Charter Team: stack rows to 2 cols on mobile */
+  .charter-row {
+    gap: 1rem;
+  }
+
+  .charter-row-4 {
+    flex-wrap: wrap;
+  }
+
+  .charter-row-4 .people-card {
+    flex: 0 1 calc(50% - 0.5rem);
+    max-width: none;
+  }
+
+  .charter-row-2 {
+    gap: 1rem;
+  }
+
+  .charter-row-2 .people-card {
+    flex: 0 1 calc(50% - 0.5rem);
+    max-width: none;
+  }
+
+  .charter-focal-wrapper {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -307,5 +346,17 @@
 
   .people-card {
     padding: 1.5rem 1rem;
+  }
+
+  /* Charter Team: single column on tiny screens */
+  .charter-row-4 .people-card,
+  .charter-row-2 .people-card {
+    flex: 0 1 100%;
+    max-width: 260px;
+  }
+
+  .charter-focal-wrapper {
+    width: 90px;
+    height: 90px;
   }
 }
